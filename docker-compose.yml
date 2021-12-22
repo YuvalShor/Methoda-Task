@@ -3,18 +3,21 @@ version: '3'
 
 services:
   frontend:
+    container_name: front
     build: ./frontend
     ports:
       - '3000:3000'
     depends_on:
       - backend
   backend:
+    container_name: back
     build: ./backend
     ports:
       - '8000:8000'
     depends_on:
       - db
   db:
+    container_name: mongo
     image: mongo:4.4.6
     restart: always
     ports:
