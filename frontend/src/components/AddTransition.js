@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AddTransition = ({ statuses, addNewTransition }) => {
   const [newTransition, setNewTransition] = useState({
-    name: '',
-    from: '',
-    to: '',
+    name: "",
+    from: "",
+    to: "",
   });
 
   const handleNewTransitionFormChange = (e) => {
@@ -13,33 +13,34 @@ const AddTransition = ({ statuses, addNewTransition }) => {
 
   const addTransition = (e) => {
     e.preventDefault();
-    console.log('New Transition');
+    console.log("New Transition:", newTransition);
+    addNewTransition(newTransition, setNewTransition);
 
     /* reset the new transition form */
-    document.getElementById('add-transition-form').reset();
+    document.getElementById("add-transition-form").reset();
     setNewTransition((prevState) => ({
-      name: '',
+      name: "",
       from: { ...prevState.from },
       to: { ...prevState.to },
     }));
   };
 
   return (
-    <div className='add-transition'>
-      <form id='add-transition-form'>
+    <div className="add-transition">
+      <form id="add-transition-form">
         <input
-          type='text'
-          name='name'
-          placeholder='New transition name'
+          type="text"
+          name="name"
+          placeholder="New transition name"
           onChange={handleNewTransitionFormChange}
           value={newTransition.name}
         />
         <select
-          name='from'
-          defaultValue=''
+          name="from"
+          defaultValue=""
           onChange={handleNewTransitionFormChange}
         >
-          <option hidden={true} value='' disabled>
+          <option hidden={true} value="" disabled>
             Choose From
           </option>
           {statuses.map((status) => {
@@ -51,11 +52,11 @@ const AddTransition = ({ statuses, addNewTransition }) => {
           })}
         </select>
         <select
-          name='to'
-          defaultValue=''
+          name="to"
+          defaultValue=""
           onChange={handleNewTransitionFormChange}
         >
-          <option hidden={true} value='' disabled>
+          <option hidden={true} value="" disabled>
             Choose To
           </option>
           {statuses.map((status) => {
@@ -69,7 +70,7 @@ const AddTransition = ({ statuses, addNewTransition }) => {
             );
           })}
         </select>
-        <button className='button-add-transition' onClick={addTransition}>
+        <button className="button-add-transition" onClick={addTransition}>
           Add new transition
         </button>
       </form>
