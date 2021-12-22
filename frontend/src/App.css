@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+}
+
+button {
+  transition-duration: 0.4s;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.7em 0.7em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 0.5vh;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-save-config {
+  background-color: green;
+  font-size: 1.3em;
+}
+
+.button-reset-config {
+  background-color: red;
+  font-size: 1.3em;
+}
+
+.button-delete {
+  background-color: red;
+}
+
+.button-delete:hover,
+.button-reset-config:hover {
+  background-color: darkred;
+}
+
+.button-save-config,
+.button-add-status,
+.button-add-transition {
+  background-color: green;
+}
+
+.button-save-config:hover,
+.button-add-status:hover,
+.button-add-transition:hover {
+  background-color: darkgreen;
+}
+
+.lists-container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5vh;
+}
+
+@media (max-width: 800px) {
+  .lists-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.status-table,
+.transition-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-collapse: collapse;
+  margin: 2vh;
+}
+
+.status-table th,
+.transition-table th {
+  font-weight: 700px;
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+  border: 1px solid #ddd;
+}
+
+.status-table tr:nth-child(even),
+.transition-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.status-table td,
+.transition-table td {
+  padding: 0.3em;
+  min-width: 30%;
+  border: 1px solid #ddd;
+}
+
+.adders-container {
+  max-width: max-content;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.add-status,
+.add-transition {
+  max-width: max-content;
+  text-align: left;
+}
+
+.main-title {
+  margin-bottom: 10vh;
+  font-size: 3em;
+  text-transform: uppercase;
+}
